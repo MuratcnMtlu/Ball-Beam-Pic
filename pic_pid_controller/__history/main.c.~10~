@@ -1,0 +1,45 @@
+#include <main.h>
+
+
+void blink_led()
+{
+   output_toggle(LED);
+}
+
+
+void main()
+{
+
+   output_b(0xFF);
+   set_tris_b(0xFF);
+   set_tris_d(0x00);
+   output_d(0x00);
+
+   setup_timer_1(t1_internal | t1_div_by_1);
+
+   while(TRUE)
+   {
+      blink_led();
+       
+       output_high(trig1);
+       delay_ms(10);
+       output_low(trig1);
+      
+       while(!input(echo1))
+       { }
+       
+       set_timer1(0);
+       
+       while(input(echo1))
+       { }
+       
+       zaman = get_timer1();
+       
+       mesafe = zaman * 0.0037;
+       
+      printf("mesafe = %f\r\n", mesafe);
+      delay_ms(500);
+    
+   }
+
+}

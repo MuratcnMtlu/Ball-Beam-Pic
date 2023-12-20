@@ -1,0 +1,107 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-023 mesafe
+024-027 zaman
+028-04F mesafe_array
+050     read_hcsr04.i
+051     @PSTRINGCN7_9600_62_63.P1
+051-054 @PRINTF_L32D_9600_62_63FPFPF.P2
+051     @delay_ms1.P3
+051-052 @ITOF.P4
+051     read_hcsr04.@SCRATCH1
+052     read_hcsr04.@SCRATCH2
+052     @PSTRINGCN7_9600_62_63.@SCRATCH1
+053     @PSTRINGCN7_9600_62_63.@SCRATCH2
+054     @PSTRINGCN7_9600_62_63.@SCRATCH3
+055     @PRINTF_L32D_9600_62_63FPFPF.P1
+055     @PSTRINGCN7_9600_62_63.@SCRATCH4
+056     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH1
+057     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH2
+058     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH3
+059     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH4
+05A     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH5
+05B     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH6
+05C     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH7
+05D     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH8
+05E-061 @MULFF.P1
+05E-061 @DIV3232.P2
+05E-061 @FTOSD.P3
+062-065 @MULFF.P1
+062-065 @DIV3232.P2
+062     @FTOSD.@SCRATCH1
+066     @MULFF.@SCRATCH1
+066     @DIV3232.@SCRATCH1
+067     @MULFF.@SCRATCH2
+067     @DIV3232.@SCRATCH2
+068     @MULFF.@SCRATCH3
+068     @DIV3232.@SCRATCH3
+069     @MULFF.@SCRATCH4
+069     @DIV3232.@SCRATCH4
+06A     @MULFF.@SCRATCH5
+06A     @DIV3232.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const719.call
+00000B  blink_led
+000013  @delay_ms1
+000028  @MULFF
+00009D  @DIV3232
+0000EC  @PRINTF_L32D_9600_62_63FPFPF
+000113  @FTOSD
+0001D2  read_hcsr04
+0001FE  @ITOF
+00025A  @PSTRINGCN7_9600_62_63
+0002CA  @cinit1
+0002CA  MAIN
+0002E9  @cinit2
+
+Project Directory:
+    C:\Users\Muratcan\OneDrive\Masaüstü\workspace\pic\blink\
+
+Project Files:
+    main.c                                                  [21-Ara-23 02:18  CRC=595C3139]
+    main.h                                                  [21-Ara-23 02:00  CRC=0401F082]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [21-Eki-22 11:02  CRC=A60F11E5]
+
+Source signature=A97C4585
+Program memory checksum=0000
+Hex file CRC=2714
+
+Units:
+    C:\Users\Muratcan\OneDrive\Masaüstü\workspace\pic\blink\main (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

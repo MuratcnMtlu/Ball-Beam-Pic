@@ -1,0 +1,61 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F887
+CCSVerions=5.112
+Compiler=PCM
+CCSVersion=5.112
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Muratcan\OneDrive\Masaüstü\workspace\pic\blink\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=21-12-2023
+D1_L=20
+D1_L1=[332]Project Opened.
+D1_L2=[713]Started Editing.
+D1_L3=[1308]Stopped Editing.
+D1_L4=[2601]Started Editing.
+D1_L5=[3197]Stopped Editing.
+D1_L6=[3483]Started Editing.
+D1_L7=[3785]Stopped Editing.
+D1_L8=[3951]Started Editing.
+D1_L9=[4375]Stopped Editing.
+D1_L10=[4475]Started Editing.
+D1_L11=[5160]Stopped Editing.
+TotalEdit=42
+TotalDebug=0
+D1_E=42
+D1_D=0
+D1_L12=[5823]Project Closed.
+D1_L13=[5858]Project Opened.
+D1_L14=[5866]Started Editing.
+D1_L15=[6724]Stopped Editing.
+D1_L16=[7160]Started Editing.
+D1_L17=[7986]Stopped Editing.
+D1_L18=[8252]Started Editing.
+D1_L19=[8493]Stopped Editing.
+D1_L20=[8493]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=5
+2=main.h
+t2=9
+Count=2
+[main.c]
+Type=4
+
+[defines]
+buildcount=14
+[Units]
+Count=1
+1=main (main)

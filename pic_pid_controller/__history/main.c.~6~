@@ -1,0 +1,38 @@
+#include <main.h>
+#define LCD_ENABLE_PIN PIN_C1
+#define LCD_RS_PIN PIN_C0
+#define LCD_RW_PIN PIN_C2
+#define LCD_DATA0 PIN_D0
+#define LCD_DATA1 PIN_D1
+#define LCD_DATA2 PIN_D2
+#define LCD_DATA3 PIN_D3
+#define LCD_DATA_PORT getenv("SFR:PORTD")
+#include <LCD.c>
+void main()
+{
+
+   output_b(0xFF);
+   set_tris_b(0xFF);
+   set_tris_d(0x00);
+   output_d(0x00);
+
+   lcd_init();   
+   lcd_gotoxy(1,1);   lcd_putc("BALL AND BEAM");
+   lcd_gotoxy(1,2);   lcd_putc("GELEN 321");
+   while(TRUE)
+   {
+
+      //Example blinking LED program
+      output_low(LED);
+      delay_ms(DELAY);
+      output_high(LED);
+      delay_ms(DELAY);
+
+      //TODO: User Code
+      
+      
+      printf("deneme\r\n");
+    
+   }
+
+}
