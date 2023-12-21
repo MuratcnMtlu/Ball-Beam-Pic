@@ -1,0 +1,56 @@
+#include <16F887.h>
+#device ADC=10
+#use delay(crystal=16000000)
+
+
+int8 seg_tablo[16] = { 
+0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07, 
+0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71}; 
+
+int8 led_tablo[9] = { //8bitlik "seg_tablo" isminde 
+0x00, 0x01, 0x02,0x04,0x08,0x10, 0x20,0x40, 0x80};
+ 
+ int8 l = 0;
+int8 say = 0;
+int8 stop = 0;
+#int_EXT 
+void kesme_prog(void) {
+while(1);
+} 
+
+
+void main()
+{
+
+setup_timer_1(T1_INTERNAL|T1_DIV_BY_8);  
+ set_tris_d(0x00); //PORTD'nin tüm pinleri çýkýþ 
+ output_d(0x00); //PORTD'ye 0x00 bilgisi gönder. 
+ set_timer1(15536); //TIMER1 sayma deðerini "64536"ya kur. 
+  output_float(PIN_B0);
+ enable_interrupts(INT_EXT);
+ ext_int_edge(L_TO_H);//TIMER1 kesmesi aktif.
+ enable_interrupts(GLOBAL); 
+ output_a(0x04);
+ 
+ 
+   while(TRUE)
+   {
+      output_d(seg_tablo[l]);
+      l++;
+      
+       bekle: 
+      set_timer1(15536);   
+      while(get_timer1()>=15536); 
+      say++; 
+      if(say<4) 
+         goto bekle;
+       
+          if(say > 4)
+            say = 0;
+               if (l > 8)
+      l = 0;
+   } 
+   
+   } 
+   
+

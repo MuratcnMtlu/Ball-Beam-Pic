@@ -1,0 +1,112 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-023 ang_bilgi
+024     sayi
+025     sayac
+026-02D led_tablo
+02E-03D seg_tablo
+03E     @delay_ms1.P1
+03E     @PSTRINGCN7_9600_62_63.P2
+03E-03F @ITOF.P3
+03E-041 @PRINTF_L32D_9600_62_63FPFPF.P4
+03E-041 @DIVFF.P5
+03F     @PSTRINGCN7_9600_62_63.@SCRATCH1
+040     @PSTRINGCN7_9600_62_63.@SCRATCH2
+041     @PSTRINGCN7_9600_62_63.@SCRATCH3
+042-045 @DIVFF.P1
+042     @PRINTF_L32D_9600_62_63FPFPF.P2
+042     @PSTRINGCN7_9600_62_63.@SCRATCH4
+043     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH1
+044     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH2
+045     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH3
+046     @DIVFF.@SCRATCH1
+046     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH4
+047     @DIVFF.@SCRATCH2
+047     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH5
+048     @DIVFF.@SCRATCH3
+048     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH6
+049     @DIVFF.@SCRATCH4
+049     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH7
+04A     @DIVFF.@SCRATCH5
+04A     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH8
+04B-04E @FTOSD.P1
+04B-04E @MULFF.P2
+04B-04E @DIV3232.P3
+04B     @DIVFF.@SCRATCH6
+04F-052 @MULFF.P1
+04F-052 @DIV3232.P2
+04F     @FTOSD.@SCRATCH1
+053     @MULFF.@SCRATCH1
+053     @DIV3232.@SCRATCH1
+054     @MULFF.@SCRATCH2
+054     @DIV3232.@SCRATCH2
+055     @MULFF.@SCRATCH3
+055     @DIV3232.@SCRATCH3
+056     @MULFF.@SCRATCH4
+056     @DIV3232.@SCRATCH4
+057     @MULFF.@SCRATCH5
+057     @DIV3232.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const730.call
+00000A  @ITOF
+000029  @DIVFF
+0000F5  @PSTRINGCN7_9600_62_63
+000150  @DIV3232
+00019F  @PRINTF_L32D_9600_62_63FPFPF
+0001B3  @MULFF
+000239  @FTOSD
+0002F8  @delay_ms1
+00030F  @cinit1
+00030F  MAIN
+000335  @cinit2
+
+Project Directory:
+    C:\Users\Muratcan\OneDrive\Masaüstü\workspace\pic\adc\
+
+Project Files:
+    main.c                                                  [22-Ara-23 01:44  CRC=8E1C57BD]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [21-Eki-22 11:02  CRC=A60F11E5]
+
+Source signature=DA3A7B87
+Program memory checksum=0000
+Hex file CRC=D5F8
+
+Units:
+    C:\Users\Muratcan\OneDrive\Masaüstü\workspace\pic\adc\main (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

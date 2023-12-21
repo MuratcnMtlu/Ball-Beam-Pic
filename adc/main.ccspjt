@@ -1,0 +1,45 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F887
+CCSVersion=5.112
+Compiler=PCM
+[Target Data]
+FileList=main.c
+[main.c]
+Type=4
+[mru-list]
+1=main.c
+
+[defines]
+buildcount=13
+
+[Opened Files]
+1=main.c
+t1=61
+Count=2
+2=..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
+t2=1
+
+[ProjectLog]
+Days=2
+D1=14-12-2023
+D1_L=2
+D1_L1=[35340]Stopped Editing.
+TotalEdit=46
+TotalDebug=0
+D1_E=46
+D1_D=0
+D1_L2=[35344]Project Closed.
+D2=22-12-2023
+D2_L=5
+D2_L1=[5240]Project Opened.
+D2_L2=[5250]Started Editing.
+D2_L3=[5550]Stopped Editing.
+D2_L4=[5672]Started Editing.
+D2_L5=[6824]Stopped Editing.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=main (main)

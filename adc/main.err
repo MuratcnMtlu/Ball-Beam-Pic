@@ -1,0 +1,5 @@
+Compiling C:\Users\Muratcan\OneDrive\Masaüstü\workspace\pic\adc\main on 22-Ara-23 at 01:44
+>>> Warning 203 "C:\Users\Muratcan\OneDrive\Masaüstü\workspace\pic\adc\main.c" Line 66(1,1): Condition always TRUE
+      Memory usage:   ROM=12%      RAM=10% - 17%
+      0 Errors,  1 Warnings.
+Build Successful.

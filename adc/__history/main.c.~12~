@@ -1,0 +1,106 @@
+#include <16F887.h>
+#device ADC=10
+#use delay(crystal=16000000)
+
+#define BIR_BAS PIN_A2 //"BIR_BAS" ifadesi "PIN_E1" olarak tanýmla 
+#define ON_BAS PIN_A3 
+
+int16 ang_bilgi = 0; 
+int8 i = 0;
+int8 seg_tablo[16] = { 
+0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07, 
+0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71}; 
+
+int8 led_tablo[9] = { //8bitlik "seg_tablo" isminde 
+0x00, 0x01, 0x02,0x04,0x08,0x10, 0x20,0x40, 0x80};
+ 
+
+
+void main()
+{
+
+ setup_adc(ADC_CLOCK_INTERNAL); //ADC için dahili saat sinyali kullan. 
+ setup_adc_ports(AN1); 
+ 
+ 
+setup_timer_1(T1_INTERNAL|T1_DIV_BY_8);  
+ set_tris_d(0x00); //PORTD'nin tüm pinleri çýkýþ 
+ output_d(0x00); //PORTD'ye 0x00 bilgisi gönder. 
+
+int8 onlar=0, birler=0; 
+ 
+ 
+   while(TRUE)
+   {
+       set_adc_channel(0); //ADC için AN0 analog kanalýný seç. 
+       delay_us(10); //10us bekle. 
+       ang_bilgi = read_adc(); 
+       if(ang_bilgi <= 100) // 10
+       {
+         onlar = 1;
+         birler = 0;
+       }
+              else if (ang_bilgi > 100 && ang_bilgi <= 200 )
+         {
+              onlar = 1;
+              birler = 1;
+         }
+               else if (ang_bilgi > 200 && ang_bilgi <= 300 )
+         {
+             onlar = 1;
+              birler = 2;
+         }
+                else if (ang_bilgi > 300 && ang_bilgi <= 400 )
+         {
+                 onlar = 1;
+              birler = 3;
+         }
+                else if (ang_bilgi > 10 && ang_bilgi <= 20 )
+         {
+         
+         }
+                else if (ang_bilgi > 10 && ang_bilgi <= 20 )
+         {
+         
+         }
+                else if (ang_bilgi > 10 && ang_bilgi <= 20 )
+         {
+         
+         }
+                else if (ang_bilgi > 10 && ang_bilgi <= 20 )
+         {
+         
+         }
+                else if (ang_bilgi > 10 && ang_bilgi <= 20 )
+         {
+         
+         }
+                else if (ang_bilgi > 10 && ang_bilgi <= 20 )
+         {
+         
+         }
+                else if (ang_bilgi > 10 && ang_bilgi <= 20 )
+         {
+         
+         }
+         
+                   for(i=0; i<40; i++) //i=0'dan baþla, i<40 olduðu sürece 
+ { //i'yi bir arttýrarak döngü yap. 
+ output_d(seg_tablo[1]); //seg_tablo'nun "onlar" nolu 
+//…satýrýndaki deðeri PORTD'ye gönder. 
+ output_high(ON_BAS); //ON_BAS çýkýþýný Lojik 1 yap. 
+ delay_ms(10); //10ms bekle 
+ output_low(ON_BAS); //ON_BAS çýkýþýný Lojik 0 yap. 
+          
+ output_d(seg_tablo[0]); //seg_tablo'nun "birler" nolu 
+//…satýrýndaki deðeri PORTD'ye gönder. 
+ output_high(BIR_BAS); //BIR_BAS çýkýþýný Lojik 1 yap. 
+ delay_ms(10); //10ms bekle 
+ output_low(BIR_BAS); //BIR_BAS çýkýþýný Lojik 0 yap. 
+      } 
+         
+   } 
+   
+   } 
+   
+
