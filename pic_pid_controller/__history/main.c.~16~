@@ -38,22 +38,21 @@ void read_hcsr04()
 
 void main()
 {
-
+   lcd_init();
    output_b(0xFF);
    set_tris_b(0xFF);
    set_tris_d(0x00);
    output_d(0x00);
-   
-   lcd_init();
-    lcd_gotoxy(1,1); printf(lcd_putc,"Selcuk Fuckin");
-    lcd_gotoxy(1,2); printf(lcd_putc,"KIZIR");
+    lcd_gotoxy(1,1); lcd_putc("Selcuk Fuckin");
+    lcd_gotoxy(1,2); lcd_putc("KIZIR");
     
   
    while(TRUE)
    {
       blink_led();
-      read_hcsr04();
+      //read_hcsr04();
         
+   
       delay_ms(200);
     
    }

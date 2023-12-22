@@ -1,4 +1,2 @@
-Compiling C:\Users\Muratcan\OneDrive\Masaüstü\workspace\pic\blink\main on 21-Ara-23 at 02:18
-      Memory usage:   ROM=9%      RAM=14% - 22%
-      0 Errors,  0 Warnings.
-Build Successful.
+Compiling C:\Users\Muratcan\Documents\GitHub\Ball-Beam-Pic\pic_pid_controller\main on 22-Ara-23 at 03:14
+*** Error 199 "C:\Program Files (x86)\PICC\Devices\16F887.h" Line 760(67,68): User aborted compilation

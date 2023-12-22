@@ -1,10 +1,9 @@
-F N "MAIN" 0 17 ""
-D G "__PCM__" 0 60 ""5.112""
-D G "__DEVICE__" 0 60 "887"
-D G "__DATE__" 0 60 ""21-Dec-23""
-D G "__TIME__" 0 60 ""02:18:22""
-D G "_UNICODE" 0 60 ""?""
-D G "__EVAL" 0 60 ""?"" "Standard Header file for the PIC16F887 device ////////////////"
+D G "__PCM__" 0 62 ""5.112""
+D G "__DEVICE__" 0 62 "887"
+D G "__DATE__" 0 62 ""22-Dec-23""
+D G "__TIME__" 0 62 ""02:45:37""
+D G "_UNICODE" 0 62 ""?""
+D G "__EVAL" 0 62 ""?"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 F N "set_tris_a" 2 39 ""
 V L "value" 2 39 "int8" `55 
@@ -1249,21 +1248,96 @@ D G "INT_RB4" 2 804 "0x1100B08"
 D G "INT_RB5" 2 805 "0x1200B08"
 D G "INT_RB6" 2 806 "0x1400B08"
 D G "INT_RB7" 2 807 "0x1800B08"
-D G "LED" 1 18 "PIN_E1"
-D G "BUZZER" 1 19 "PIN_B1"
-D G "trig1" 1 20 "PIN_B4"
-D G "echo1" 1 21 "PIN_B5"
-D G "DELAY" 1 23 "500"
-V G "mesafe" 1 25 "float" `708 
-V G "zaman" 1 25 "float" `709 
-V G "mesafe_array" 0 3 "float[10]" `710 
+D G "LCD_ENABLE_PIN" 1 7 "PIN_C2"
+D G "LCD_RS_PIN" 1 8 "PIN_C3"
+D G "LCD_RW_PIN" 1 9 "PIN_C1"
+D G "LCD_DATA4" 1 10 "PIN_D0"
+D G "LCD_DATA5" 1 11 "PIN_D1"
+D G "LCD_DATA6" 1 12 "PIN_D2"
+D G "LCD_DATA7" 1 13 "PIN_D3"
+D G "__LCD_C__" 3 76 ""
+C L "jump_to_isr" 3 2 2 "FUNCTION"
+C L "jump_to_isr" 3 2 1 "FUNCTION"
+C L "jump_to_isr" 3 2 1 "FUNCTION"
+C L "jump_to_isr" 3 2 1 "FUNCTION"
+C L "jump_to_isr" 3 2 1 "FUNCTION"
+C L "jump_to_isr" 3 2 1 "FUNCTION"
+C L "jump_to_isr" 3 2 2 "FUNCTION"
+T G "LCD_PIN_MAP" 3 90 "{int1 enable,int1 rs,int1 rw,int1 unused,int4 data}" `714  "this is to improve compatability with previous LCD drivers that accepted"
+D G "lcd_output_enable" 3 112 "(x) output_bit(LCD_ENABLE_PIN, x)"
+D G "lcd_enable_tris" 3 113 "()  output_drive(LCD_ENABLE_PIN)"
+D G "lcd_output_rs" 3 120 "(x) output_bit(LCD_RS_PIN, x)"
+D G "lcd_rs_tris" 3 121 "()  output_drive(LCD_RS_PIN)"
+D G "lcd_output_rw" 3 128 "(x) output_bit(LCD_RW_PIN, x)"
+D G "lcd_rw_tris" 3 129 "()  output_drive(LCD_RW_PIN)"
+D G "LCD_TYPE" 3 179 "2" "0=5x7, 1=5x10, 2=2 lines"
+D G "LCD_LINE_TWO" 3 183 "0x40" "LCD RAM address for the second line"
+D G "LCD_LINE_LENGTH" 3 187 "20"
+F N "lcd_read_nibble" 3 190 ""
+f G "lcd_read_nibble" 3 190 "int8()" `715 
+F N "lcd_read_byte" 3 192 ""
+F G "lcd_read_byte" 3 193 "int8()" `716 
+V L "low" 3 194 "int8" `717 
+V L "high" 3 194 "int8" `718 
+F N "lcd_read_nibble" 3 239 ""
+F G "lcd_read_nibble" 3 240 "int8()" `715 
+V L "n" 3 242 "int8" `720 
+C L "lcd_read_nibble" 3 2 1 "FUNCTION"
+F N "lcd_send_nibble" 3 256 ""
+V L "n" 3 256 "int8" `722 
+F G "lcd_send_nibble" 3 257 "void(int8 n)" `721 
+C L "lcd_send_nibble" 3 2 1 "FUNCTION"
+F N "lcd_send_byte" 3 274 ""
+V L "address" 3 274 "int8" `724 
+V L "n" 3 274 "int8" `725 
+F G "lcd_send_byte" 3 275 "void(int8 address,int8 n)" `723 
+F N "lcd_init" 3 299 ""
+F G "lcd_init" 3 300 "void()" `726 
+V L "i" 3 301 "int8" `727 
+V L "LCD_INIT_STRING" 3 302 "int8[4]" `728 
+C L "lcd_init" 3 2 2 "FUNCTION"
+F N "lcd_gotoxy" 3 345 ""
+V L "x" 3 345 "int8" `730 
+V L "y" 3 345 "int8" `731 
+F G "lcd_gotoxy" 3 346 "void(int8 x,int8 y)" `729 
+V L "address" 3 347 "int8" `732 
+F N "lcd_putc" 3 363 ""
+V L "c" 3 363 "int8" `734 
+F G "lcd_putc" 3 364 "void(int8 c)" `733 
+F N "lcd_getc" 3 406 ""
+V L "x" 3 406 "int8" `736 
+V L "y" 3 406 "int8" `737 
+F G "lcd_getc" 3 407 "int8(int8 x,int8 y)" `735 
+V L "value" 3 408 "int8" `738 
+C L "lcd_getc" 3 2 1 "FUNCTION"
+C L "lcd_set_cgram_char" 3 2 5 "FUNCTION"
+F N "lcd_set_cgram_char" 3 424 ""
+V L "which" 3 424 "int8" `740 
+V L "ptr" 3 424 "*int8" `741 
+F G "lcd_set_cgram_char" 3 425 "void(int8 which,*int8 ptr)" `739 
+V L "i" 3 426 "int8" `742 
+C L "lcd_set_cgram_char" 3 2 1 "FUNCTION"
+F N "lcd_cursor_on" 3 443 ""
+V L "on" 3 443 "int8" `744 
+F G "lcd_cursor_on" 3 444 "void(int8 on)" `743 
+C L "lcd_cursor_on" 3 2 1 "FUNCTION"
+C L "lcd_cursor_on" 3 2 1 "FUNCTION"
+D G "LED" 1 17 "PIN_E1"
+D G "BUZZER" 1 18 "PIN_B1"
+D G "trig1" 1 19 "PIN_B4"
+D G "echo1" 1 20 "PIN_B5"
+D G "DELAY" 1 22 "500"
+V G "mesafe" 1 24 "float" `745 
+V G "zaman" 1 24 "float" `746 
+V G "mesafe_array" 0 3 "float[10]" `747 
 F N "blink_led" 0 5 ""
-F G "blink_led" 0 6 "void()" `711 
+F G "blink_led" 0 6 "void()" `748 
 F N "read_hcsr04" 0 10 ""
-F G "read_hcsr04" 0 11 "void()" `712 
-V L "i" 0 13 "int8" `713 
+F G "read_hcsr04" 0 11 "void()" `749 
+V L "i" 0 13 "int8" `750 
 F N "MAIN" 0 39 ""
-F G "MAIN" 0 40 "void(int32 ,int32 )" `730 
+F G "MAIN" 0 40 "void()" `767 
+C L "MAIN" 0 49 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep_ulpwu" 1 0
