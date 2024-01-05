@@ -1,9 +1,10 @@
-D G "__PCM__" 0 62 ""5.112""
-D G "__DEVICE__" 0 62 "887"
-D G "__DATE__" 0 62 ""22-Dec-23""
-D G "__TIME__" 0 62 ""02:45:37""
-D G "_UNICODE" 0 62 ""?""
-D G "__EVAL" 0 62 ""?"" "Standard Header file for the PIC16F887 device ////////////////"
+F N "t" 3 136 ""
+D G "__PCM__" 3 137 ""5.112""
+D G "__DEVICE__" 3 137 "887"
+D G "__DATE__" 3 137 ""22-Dec-23""
+D G "__TIME__" 3 137 ""03:21:08""
+D G "_UNICODE" 3 137 ""?""
+D G "__EVAL" 3 137 ""?"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 F N "set_tris_a" 2 39 ""
 V L "value" 2 39 "int8" `55 
@@ -1337,7 +1338,6 @@ F G "read_hcsr04" 0 11 "void()" `749
 V L "i" 0 13 "int8" `750 
 F N "MAIN" 0 39 ""
 F G "MAIN" 0 40 "void()" `767 
-C L "MAIN" 0 49 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep_ulpwu" 1 0

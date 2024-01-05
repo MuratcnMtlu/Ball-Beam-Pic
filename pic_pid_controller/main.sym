@@ -11,30 +11,63 @@
 025-028 zaman
 029-050 mesafe_array
 051-052 @sprintf_string
-053-056 @PRINTF_L32D_9600_62_63FPFPF.P1
+053     read_hcsr04.i
 053     lcd_init.i
 053     @PSTRINGC7_733.@SCRATCH1
+054-055 @ITOF.P1
+054     @PSTRINGCN7_9600_62_63.P2
 054-057 lcd_init.LCD_INIT_STRING
+054-057 @PRINTF_L32D_9600_62_63FPFPF.P1
+054     read_hcsr04.@SCRATCH1
 054     @PSTRINGC7_733.@SCRATCH2
+055     read_hcsr04.@SCRATCH2
+055     @PSTRINGCN7_9600_62_63.@SCRATCH1
 055     @PSTRINGC7_733.@SCRATCH3
 056     lcd_putc.c
+056     @PSTRINGCN7_9600_62_63.@SCRATCH2
 056     @PSTRINGC7_733.@SCRATCH4
-057     @PRINTF_L32D_9600_62_63FPFPF.P1
 057     lcd_gotoxy.x
+057     @PSTRINGCN7_9600_62_63.@SCRATCH3
 058     lcd_gotoxy.y
-058     @delay_ms1.P1
+058     @PRINTF_L32D_9600_62_63FPFPF.P1
+058     @delay_ms1.P2
 058     lcd_init.@SCRATCH1
+058     @PSTRINGCN7_9600_62_63.@SCRATCH4
 059     lcd_gotoxy.address
+059     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH1
 05A     lcd_gotoxy.@SCRATCH1
+05A     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH2
 05B     lcd_send_byte.address
+05B     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH3
 05C     lcd_send_byte.n
+05C     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH4
 05D     lcd_read_byte.low
 05D     lcd_send_byte.@SCRATCH1
+05D     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH5
 05E     lcd_read_byte.high
 05E     lcd_send_nibble.n
+05E     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH6
 05F     lcd_read_nibble.n
 05F     lcd_read_byte.@SCRATCH1
+05F     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH7
 060     lcd_read_nibble.@SCRATCH1
+060     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH8
+061-064 @FTOSD.P1
+061-064 @MULFF.P2
+061-064 @DIV3232.P3
+065-068 @DIV3232.P1
+065-068 @MULFF.P2
+065     @FTOSD.@SCRATCH1
+069     @MULFF.@SCRATCH1
+069     @DIV3232.@SCRATCH1
+06A     @MULFF.@SCRATCH2
+06A     @DIV3232.@SCRATCH2
+06B     @MULFF.@SCRATCH3
+06B     @DIV3232.@SCRATCH3
+06C     @MULFF.@SCRATCH4
+06C     @DIV3232.@SCRATCH4
+06D     @MULFF.@SCRATCH5
+06D     @DIV3232.@SCRATCH5
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -59,22 +92,29 @@ ROM Allocation:
 000171  lcd_putc
 00019D  @PSTRINGC7_733
 0001F3  blink_led
-0001FB  MAIN
-0001FB  @cinit1
-00021E  @cinit2
+0001FB  @MULFF
+000270  @DIV3232
+0002BF  @PRINTF_L32D_9600_62_63FPFPF
+0002E6  @FTOSD
+0003A5  read_hcsr04
+0003D1  @ITOF
+00042D  @PSTRINGCN7_9600_62_63
+00049D  MAIN
+00049D  @cinit1
+0004C0  @cinit2
 
 Project Directory:
     C:\Users\Muratcan\Documents\GitHub\Ball-Beam-Pic\pic_pid_controller\
 
 Project Files:
-    main.c                                                  [22-Ara-23 02:45  CRC=019997A2]
+    main.c                                                  [22-Ara-23 03:14  CRC=C78950F2]
     main.h                                                  [21-Ara-23 16:40  CRC=20199519]
     ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [21-Eki-22 11:02  CRC=A60F11E5]
     ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c [22-Þub-16 10:05  CRC=D1A6378A]
 
-Source signature=6B0EADB4
+Source signature=30FE6704
 Program memory checksum=0000
-Hex file CRC=16A1
+Hex file CRC=B926
 
 Units:
     C:\Users\Muratcan\Documents\GitHub\Ball-Beam-Pic\pic_pid_controller\main (main)

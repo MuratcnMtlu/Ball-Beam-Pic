@@ -31,7 +31,7 @@ D1_L8=[3951]Started Editing.
 D1_L9=[4375]Stopped Editing.
 D1_L10=[4475]Started Editing.
 D1_L11=[5160]Stopped Editing.
-TotalEdit=52
+TotalEdit=57
 TotalDebug=0
 D1_E=42
 D1_D=0
@@ -48,9 +48,9 @@ D1_L21=[59715]Project Opened.
 D1_L22=[59726]Started Editing.
 D1_L23=[60610]Stopped Editing.
 D2=22-12-2023
-D2_E=10
+D2_E=15
 D2_D=0
-D2_L=7
+D2_L=9
 D2_L1=[5240]Project Closed.
 D2_L2=[7872]Project Opened.
 D2_L3=[9152]Started Editing.
@@ -58,6 +58,8 @@ D2_L4=[9496]Stopped Editing.
 D2_L5=[9753]Started Editing.
 D2_L6=[10235]Stopped Editing.
 D2_L7=[11631]Started Editing.
+D2_L8=[11970]Stopped Editing.
+D2_L9=[47592]Project Closed.
 
 [Opened Files]
 1=main.c
@@ -66,12 +68,12 @@ t1=33
 t2=1
 Count=3
 3=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c
-t3=45
+t3=29
 [main.c]
 Type=4
 
 [defines]
-buildcount=18
+buildcount=19
 [Units]
 Count=1
 1=main (main)
