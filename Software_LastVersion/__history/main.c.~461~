@@ -1,0 +1,294 @@
+#define LCD_RS_PIN     PIN_D0
+#define LCD_RW_PIN     PIN_D1
+#define LCD_ENABLE_PIN PIN_D2
+#define LCD_DATA4      PIN_D3
+#define LCD_DATA5      PIN_D4
+#define LCD_DATA6      PIN_D5
+#define LCD_DATA7      PIN_D6
+
+#include <16F887.h>
+#device adc = 10
+#use delay(clock = 16000000)
+#fuses HS, WDT, NOLVP
+#use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8,stream=PORT1) 
+
+#include <math.h>
+#include <lcd.c>
+
+  
+
+ 
+#define LED PIN_E1 
+#define trig1 PIN_C0
+#define echo1 PIN_C1
+#define trig2 PIN_B2
+#define echo2 PIN_B3
+
+#define Umax 66 // maximum angle of the servomotr in degrees
+#define Umin -66// minimun angle
+#define M_PI      3.14
+
+#define Umax_rad 1.151  // maximum angle of the servomotr in radiants
+#define Umin_rad -1.151 // minimun angle
+#define T 0.09 
+
+#define DELAY 500
+
+ #use rtos(timer = 2, minor_cycle = 10ms)
+
+double target,target_prec, pos, pos_prec, time;
+
+ double kp_a = 0; 
+ double ki_a = 0; 
+ double kd_a = 0; 
+ 
+ double kp = 13; 
+ double ki = 1.1; 
+ double kd = 6.3; 
+ 
+ double error = 0;
+ double P = 0;
+ double I = 0;
+ double D = 0;
+ double U = 0;
+ 
+ double I_prec=0, U_prec=0, D_prec=0, error_prec = 0;   
+ 
+ 
+ int8 saturation;
+ int16 say =0;
+ 
+
+ 
+
+ 
+ 
+unsigned long int  aci=0;
+
+
+void move_servo(unsigned long int  aci);
+
+
+
+/*
+#INT_EXT
+void  EXT_isr(void) 
+{
+
+   kp =   kp_a; 
+   ki =   ki_a;
+   kd =   kd_a; 
+   lcd_putc("\fEXT-INT");
+   
+ //  printf(lcd_putc," f\\"); 
+  printf(" INT_EXT\n");
+    
+  delay_ms(100);
+}
+*/
+ 
+void read_target()
+{
+   setup_timer_1(t1_internal | t1_div_by_1);
+    for(int i =  0; i < 5; i++)
+    {
+       output_high(trig1);
+       delay_ms(10);
+       output_low(trig1);
+      
+       while(!input(echo1))
+       { }
+       
+       set_timer1(0);
+       
+       while(input(echo1))
+       { }
+       
+       time = get_timer1();
+       
+       target = time * 0.0037*0.01;    
+    }
+}
+
+
+    void read_pos()
+{
+   
+   setup_timer_1(t1_internal | t1_div_by_1);
+    for(int i =  0; i < 5; i++)
+    {
+       output_high(trig2);
+       delay_ms(10);
+       output_low(trig2);
+      
+       while(!input(echo2))
+       { }
+       
+       set_timer1(0);
+       
+       while(input(echo2))
+       { }
+       
+       time = get_timer1();
+       
+       pos = time * 0.0037*0.01;  
+      
+    }
+     
+ 
+}
+
+
+void get_pid_gains()
+{
+
+      setup_adc_ports(sAN0 , VSS_VDD);
+      set_adc_channel(0); 
+      delay_us(20);
+      kp_a = (float)read_adc();     
+      kp_a /= 50.22;
+      kp =   kp_a;
+       
+      delay_us(20);
+      setup_adc_ports(NO_ANALOGS);
+      setup_adc_ports(sAN1 , VSS_VDD);
+       
+      set_adc_channel(1); 
+      delay_us(20);
+      ki_a = (float)read_adc();
+      ki_a /= 50.22;
+       ki =   ki_a;
+      
+      setup_adc_ports(NO_ANALOGS);
+      setup_adc_ports(sAN2 , VSS_VDD);
+       
+      set_adc_channel(2); 
+      delay_us(20);
+      kd_a = (float)read_adc();
+      kd_a /= 50.22;
+       kd =   kd_a; 
+      
+       setup_adc_ports(NO_ANALOGS);
+}
+
+
+void move_servo(unsigned long int  aci)
+{
+
+aci *= 11;
+
+for(int j = 0;j < 60; j++)
+{
+ output_high(pin_c2);
+ delay_us(400 + aci );  
+ output_low(pin_c2);
+ delay_us(16000 - aci);
+}
+continue;
+}
+
+
+double map(double value, float x_min, float x_max, float y_min, float y_max)   
+{                
+    return (y_min + (((y_max - y_min)/(x_max - x_min)) * (value - x_min)));
+} 
+
+void pid_compute(double pos, double target)
+{
+   error = (pos - target);
+   
+   P = Kp*error;
+   
+   if ( ! Saturation )  I = I_prec + T*Ki*error;
+    
+   U = P ;
+  
+   U=ceil(U*180/M_PI);
+   
+   U=map(U, Umin, Umax, 1, 90);
+    
+   if(U < 0) U = 1;
+   else if (U > 90) U = 90;
+   
+   
+   if (abs(error) > 0.02 ) move_servo((unsigned long int)ceil(U));
+   
+}
+
+
+#task(rate = 50ms, max = 10ms)                  // 1st RTOS task (executed every 250ms)
+void led1(){
+    read_target();
+     read_pos();
+
+}
+
+
+
+#task(rate = 100ms, max = 10ms)                  // 2nd RTOS task (executed every 500ms)
+void led3(){
+     get_pid_gains();
+     lcd_send_byte(0,0x0f);
+     lcd_gotoxy(1,1); 
+
+     printf(lcd_putc,"T:%f D:%f", (float)target, (float)pos);  
+     lcd_gotoxy(1,2);
+     printf(lcd_putc,"p:%fd:%fi:%f",kp, ki ,kd);
+}
+
+
+#task(rate = 50ms, max = 10ms)                  // 2nd RTOS task (executed every 500ms)
+void led4(){
+   printf("%f,%f\n",target,pos);
+   pid_compute(pos, target);
+   
+   I_prec = I;
+   pos_prec = pos;
+   D_prec = D;
+   target_prec = target;
+   error_prec = error;
+
+}
+
+
+ 
+
+
+void main(void)
+{
+
+   setup_wdt(WDT_OFF);
+   setup_wdt(WDT_2304MS|WDT_DIV_16); 
+  
+   lcd_init();
+   lcd_putc("\fReady...\n");
+   setup_adc(ADC_CLOCK_INTERNAL);
+   lcd_putc("\fBALL - BEAM ");
+   
+
+   rtos_run();
+
+   set_tris_d(0x0); 
+
+ 
+     
+   while(1)
+   {
+  
+   }
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

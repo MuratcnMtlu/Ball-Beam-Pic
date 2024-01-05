@@ -1,0 +1,278 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @CURRENT_TASK
+021-024 target
+025-028 target_prec
+029-02C pos
+02D-030 pos_prec
+031-034 time
+035-038 kp_a
+039-03C ki_a
+03D-040 kd_a
+041-044 kp
+045-048 ki
+049-04C kd
+04D-050 error
+051-054 p
+055-058 i
+059-05C D
+05D-060 U
+061-064 I_prec
+065-068 U_prec
+069-06C D_prec
+06D-070 error_prec
+071     saturation
+072-073 say
+074-075 aci
+076     @TRIS_C
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B-07C @sprintf_string
+0A0-0A6 @TASKINFO1_2_2_0_0
+0A7-0AD @TASKINFO2_2_2_0_0
+0AE-0B4 @TASKINFO3_2_2_0_0
+0B5-0B8 atan2.y
+0B5     lcd_init.i
+0B5     @PSTRINGC7_874.@SCRATCH1
+0B6-0B9 lcd_init.LCD_INIT_STRING
+0B6     @PSTRINGC7_874.@SCRATCH2
+0B7     @PSTRINGC7_874.@SCRATCH3
+0B8     @PSTRINGC7_874.@SCRATCH4
+0B9-0BC atan2.x
+0BA     lcd_init.@SCRATCH1
+0BD-0C0 atan2.z
+0C1.0   atan2.sign
+0C2     atan2.quad
+0C3     read_pos.i
+0C3     read_target.i
+0C4     read_target.@SCRATCH1
+0C4     read_pos.@SCRATCH1
+0C5     read_target.@SCRATCH2
+0C5     read_pos.@SCRATCH2
+0C6     read_target.@SCRATCH3
+0C6     read_pos.@SCRATCH3
+0C7     read_target.@SCRATCH4
+0C7     read_pos.@SCRATCH4
+0D5-0D8 @PRINTF_L32D_874FPFPF.P1
+0D9     @PRINTF_L32D_874FPFPF.P1
+0DA     @PRINTF_L32D_874FPFPF.@SCRATCH1
+0DB     @PRINTF_L32D_874FPFPF.@SCRATCH2
+0DC     @PRINTF_L32D_874FPFPF.@SCRATCH3
+0DD     @PRINTF_L32D_874FPFPF.@SCRATCH4
+0DE     @PRINTF_L32D_874FPFPF.@SCRATCH5
+0DF     @PRINTF_L32D_874FPFPF.@SCRATCH6
+0E0     @PRINTF_L32D_874FPFPF.@SCRATCH7
+0E1     @PRINTF_L32D_874FPFPF.@SCRATCH8
+0E2     lcd_putc.c
+0E3     lcd_gotoxy.x
+0E3     @delay_ms1.P1
+0E4     lcd_gotoxy.y
+0E5     lcd_gotoxy.address
+0E6     lcd_gotoxy.@SCRATCH1
+0E7     lcd_send_byte.address
+0E8     lcd_send_byte.n
+0E9     lcd_read_byte.low
+0E9     lcd_send_byte.@SCRATCH1
+0EA     lcd_read_byte.high
+0EA     lcd_send_nibble.n
+0EB     lcd_read_nibble.n
+0EB     lcd_read_byte.@SCRATCH1
+0EC     lcd_read_nibble.@SCRATCH1
+0EF     @PRINTF_L32D_9600_62_63FPFPF.P1
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+110-113 pid_compute.pos
+110-113 @PRINTF_L32D_9600_62_63FPFPF.P1
+114-117 pid_compute.target
+114     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH1
+115     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH2
+116     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH3
+117     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH4
+118-11B map.value
+118     pid_compute.@SCRATCH1
+118     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH5
+119     pid_compute.@SCRATCH2
+119     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH6
+11A-11B move_servo.aci
+11A     pid_compute.@SCRATCH3
+11A     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH7
+11B     pid_compute.@SCRATCH4
+11B     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH8
+11C-11F ceil.x
+11C     move_servo.j
+11C-11F map.x_min
+11D-120 @FTOSD.P1
+11D-120 @DIV3232.P2
+11D-11E @MUL1616.P3
+11D     move_servo.@SCRATCH1
+11E     move_servo.@SCRATCH2
+11F-120 @MUL1616.P1
+11F     move_servo.@SCRATCH3
+120     @delay_us1.P1
+120-123 map.x_max
+120-123 CEIL_FLOOR.x
+121-124 @DIV3232.P1
+121     @MUL1616.@SCRATCH1
+121     @FTOSD.@SCRATCH1
+124     CEIL_FLOOR.n
+124-127 map.y_min
+125-128 CEIL_FLOOR.y
+125     @DIV3232.@SCRATCH1
+126     @DIV3232.@SCRATCH2
+127     @DIV3232.@SCRATCH3
+128-12B map.y_max
+128     @DIV3232.@SCRATCH4
+129-12C CEIL_FLOOR.res
+129     @DIV3232.@SCRATCH5
+12C     map.@SCRATCH1
+12D-12E CEIL_FLOOR.l
+12D     map.@SCRATCH2
+12E     map.@SCRATCH3
+12F.0   CEIL_FLOOR.s
+12F     map.@SCRATCH4
+130-133 @FLT.P1
+130-133 @DIVFF.P2
+130-133 @MULFF.P3
+130-133 @SFTOI.P4
+130     CEIL_FLOOR.@SCRATCH1
+131     CEIL_FLOOR.@SCRATCH2
+132     CEIL_FLOOR.@SCRATCH3
+133     CEIL_FLOOR.@SCRATCH4
+134-137 @MULFF.P1
+134-137 @ADDFF.P2
+134-137 @DIVFF.P3
+134-137 @FLT.P4
+134-135 @ITOF.P5
+138-13B @ADDFF.P1
+138     @FLT.@SCRATCH1
+138     @MULFF.@SCRATCH1
+138     @DIVFF.@SCRATCH1
+139     @FLT.@SCRATCH2
+139     @MULFF.@SCRATCH2
+139     @DIVFF.@SCRATCH2
+13A     @MULFF.@SCRATCH3
+13A     @DIVFF.@SCRATCH3
+13B     @MULFF.@SCRATCH4
+13B     @DIVFF.@SCRATCH4
+13C     @MULFF.@SCRATCH5
+13C     @ADDFF.@SCRATCH1
+13C     @DIVFF.@SCRATCH5
+13D     @ADDFF.@SCRATCH2
+13D     @DIVFF.@SCRATCH6
+13E     @ADDFF.@SCRATCH3
+13F     @ADDFF.@SCRATCH4
+140     @ADDFF.@SCRATCH5
+141     @ADDFF.@SCRATCH6
+142     @ADDFF.@SCRATCH7
+143     @ADDFF.@SCRATCH8
+
+ROM Allocation:
+000004  @const960.call
+00000E  @delay_ms1
+000023  @ITOF
+000042  @MULFF
+0000B9  read_target
+0000B9  led1
+000147  read_pos
+0001D7  @DIVFF
+0002A3  lcd_send_byte
+0002AB  lcd_read_byte
+0002F6  lcd_read_nibble
+0003C9  lcd_putc
+000423  @FTOSD
+000444  @DIV3232
+000495  @PRINTF_L32D_874FPFPF
+0005B6  get_pid_gains
+0005B6  led3
+00074D  lcd_gotoxy
+0007C5  @SFTOI
+0007E6  @delay_us1
+0007F7  @const954.call
+000800  @PRINTF_L32D_9600_62_63FPFPF
+00090E  @ADDFF
+000A54  @FLT
+000A95  ceil
+000AA0  CEIL_FLOOR
+000C84  @const959.call
+000C8B  lcd_init
+000CF7  lcd_send_nibble
+000D4D  @cinit1
+000D4D  MAIN
+000DBA  @cinit2
+000E44  @PSTRINGC7_874
+001000  led4
+00105D  pid_compute
+0012FA  map
+001436  move_servo
+00143D  @MUL1616
+
+Project Directory:
+    C:\Users\Muratcan\OneDrive\Masaüstü\TESTER\
+
+Project Files:
+    main.c                                                  [04-Oca-24 08:24  CRC=4E1E90DF]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [21-Eki-22 11:02  CRC=A60F11E5]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h  [05-May-20 13:57  CRC=02232397]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c   [22-Þub-16 10:05  CRC=D1A6378A]
+
+Source signature=999D356F
+Program memory checksum=0000
+Hex file CRC=CB12
+
+Units:
+    C:\Users\Muratcan\OneDrive\Masaüstü\TESTER\main (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Task Info:
+    Ticks: 100 ns
+    Cycle: 10, ms
+
+Tasks:
+    led1
+    led3
+    led4
+
+Task Schedule:
+     10, ms  932:led1
+    Sync to next 10, ms
+     10, ms  946:led4
+    Sync to next 10, ms
+     10, ms  934:led3
+    Sync to next 10, ms
+    Wait 20, ms
+     10, ms  932:led1
+    Sync to next 10, ms
+     10, ms  946:led4
+    Sync to next 10, ms
+    Wait 30, ms
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

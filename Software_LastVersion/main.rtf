@@ -1,0 +1,597 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033\deftab709{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\fswiss\fprq2\fcharset0 Tahoma;}}{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1
+\pard\nowidctlpar\f0\fs24
+\par\f1
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\pard\nowidctlpar\qc\b\f0\fs32 Software Development Document
+\par\b0\f1\fs24
+\par\b\f0\fs32 for
+\par\b0\f1\fs24
+\par\b\f0\fs32 %PROJECTTITLE%
+\par
+\pard\nowidctlpar\b0\f1\fs24
+\par\f0
+\par\f1
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\pard\nowidctlpar\qc\f0 Prepared by:  %DEVELOPER%
+\par
+\pard\nowidctlpar\f1
+\par\f0
+\par\f1
+\par
+\pard\nowidctlpar\qc\f0 %COMPANY%
+\par
+\pard\nowidctlpar\f1
+\par
+\par\page
+\pard\keepn\nowidctlpar\sb240\sa120\f0
+\par
+\pard\keepn\nowidctlpar\li720\sb240\sa120\b\fs32 Table of Contents
+\par
+\pard\nowidctlpar\b0\fs24
+\par\f1
+\par\page\f0
+\par
+\par
+\pard\nowidctlpar\li720\f2 1.\f0 Scope
+\par
+\pard\nowidctlpar\tab\tab 1.1 Identification
+\par         \tab\tab The formal name for this project is: %PROJECTTITLE%
+\par\tab\tab The electronic name is: main
+\par\tab\tab Date when project was created:%DATE_CREATED%
+\par
+\pard\nowidctlpar\li1440 Dates when changes were made: \f1 %CHANGES%
+\par
+\pard\nowidctlpar\li720\f0
+\par\tab 1.2 Purpose
+\par
+\pard\nowidctlpar\tab\tab %PURPOSE%
+\par
+\pard\nowidctlpar\li720\tab 1.3 Introduction
+\par
+\pard\nowidctlpar\tab\tab This document describes the detailed design for this project.  
+\par
+\par
+\pard\nowidctlpar\li720\f2 2.\tab\f0 Referenced Documents
+\par\tab 2.1 Related Documentation
+\par             %REFERENCES%
+\par
+\pard\nowidctlpar
+\par
+\pard\nowidctlpar\li720\tab 2.2 Project Source Files
+\par
+\pard\nowidctlpar
+\par\tab\tab main.c
+\par\tab\tab ..\\..\\..\\..\\..\\..\\Program Files (x86)\\PICC\\Devices\\16F887.h
+\par
+\par\tab\tab 2.3 Project Output File
+\par\tab\tab main.xsym
+\par\tab\tab main.err
+\par\tab\tab main.esym
+\par\tab\tab main.hex
+\par\tab\tab main.sym
+\par\tab\tab main.lst
+\par\tab\tab main.cof
+\par\tab\tab main.ccspjt
+\par\tab\tab main.tre
+\par\tab\tab main.STA
+\par
+\par
+\pard\nowidctlpar\li720\f2 3. \f0 Requirements
+\par
+\pard\nowidctlpar\li630\tab\tab 3.1 Program Overview
+\par
+\pard\nowidctlpar\li1080       %OVERVIEW%
+\par
+\pard\nowidctlpar
+\par\tab\tab 3.2  Global Data
+\par\tab\tab 3.2.1 Constants
+\par\tab\tab\tab
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  __PCM__\cell  5.112\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  __DEVICE__\cell  887\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  __DATE__\cell  30-Dec-23\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  __TIME__\cell  01:59:59\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  _UNICODE\cell  ?\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  __EVAL\cell  ?\cell  Standard Header file for the PIC16F887 device ////////////////\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_A0\cell  40\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_A1\cell  41\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_A2\cell  42\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_A3\cell  43\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_A4\cell  44\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_A5\cell  45\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_A6\cell  46\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_A7\cell  47\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_B0\cell  48\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_B1\cell  49\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_B2\cell  50\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_B3\cell  51\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_B4\cell  52\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_B5\cell  53\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_B6\cell  54\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_B7\cell  55\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_C0\cell  56\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_C1\cell  57\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_C2\cell  58\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_C3\cell  59\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_C4\cell  60\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_C5\cell  61\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_C6\cell  62\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_C7\cell  63\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_D0\cell  64\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_D1\cell  65\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_D2\cell  66\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_D3\cell  67\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_D4\cell  68\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_D5\cell  69\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_D6\cell  70\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_D7\cell  71\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_E0\cell  72\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_E1\cell  73\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_E2\cell  74\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PIN_E3\cell  75\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  FALSE\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  TRUE\cell  1\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  BYTE\cell  int8\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  BOOLEAN\cell  int1\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  getc\cell  getch\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  fgetc\cell  getch\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  getchar\cell  getch\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  putc\cell  putchar\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  fputc\cell  putchar\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  fgets\cell  gets\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  fputs\cell  puts\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_FROM_SLEEP\cell  3\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_TIMEOUT\cell  11\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  MCLR_FROM_SLEEP\cell  19\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  MCLR_FROM_RUN\cell  27\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  NORMAL_POWER_UP\cell  25\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  BROWNOUT_RESTART\cell  26\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_INTERNAL\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_EXT_L_TO_H\cell  32\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_EXT_H_TO_L\cell  48\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_DIV_1\cell  8\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_DIV_2\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_DIV_4\cell  1\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_DIV_8\cell  2\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_DIV_16\cell  3\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_DIV_32\cell  4\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_DIV_64\cell  5\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_DIV_128\cell  6\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_DIV_256\cell  7\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T0_8_BIT\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_INTERNAL\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_EXT_L_TO_H\cell  32\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_EXT_H_TO_L\cell  48\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_DIV_1\cell  8\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_DIV_2\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_DIV_4\cell  1\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_DIV_8\cell  2\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_DIV_16\cell  3\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_DIV_32\cell  4\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_DIV_64\cell  5\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_DIV_128\cell  6\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_DIV_256\cell  7\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  RTCC_8_BIT\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_18MS\cell  8\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_36MS\cell  9\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_72MS\cell  10\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_144MS\cell  11\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_288MS\cell  12\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_576MS\cell  13\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_1152MS\cell  14\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_2304MS\cell  15\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_ON\cell  0x4000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_OFF\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_DIV_16\cell  0x100\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_DIV_8\cell  0x300\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_DIV_4\cell  0x500\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_DIV_2\cell  0x700\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_TIMES_1\cell  0x900\cell  Default\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_TIMES_2\cell  0xB00\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_TIMES_4\cell  0xD00\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_TIMES_8\cell  0xF00\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_TIMES_16\cell  0x1100\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_TIMES_32\cell  0x1300\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_TIMES_64\cell  0x1500\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  WDT_TIMES_128\cell  0x1700\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_DISABLED\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_INTERNAL\cell  5\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_EXTERNAL\cell  7\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_EXTERNAL_SYNC\cell  3\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_CLK_OUT\cell  8\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_DIV_BY_1\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_DIV_BY_2\cell  0x10\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_DIV_BY_4\cell  0x20\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_DIV_BY_8\cell  0x30\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_GATE\cell  0x40\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T1_GATE_INVERTED\cell  0xC0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T2_DISABLED\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T2_DIV_BY_1\cell  4\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T2_DIV_BY_4\cell  5\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  T2_DIV_BY_16\cell  6\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_OFF\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_CAPTURE_FE\cell  0x04\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_CAPTURE_RE\cell  0x05\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_CAPTURE_DIV_4\cell  0x06\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_CAPTURE_DIV_16\cell  0x07\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_COMPARE_SET_ON_MATCH\cell  0x08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_COMPARE_CLR_ON_MATCH\cell  0x09\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_COMPARE_INT\cell  0x0A\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_COMPARE_RESET_TIMER\cell  0x0B\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM\cell  0x0C\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM_PLUS_1\cell  0x1c\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM_PLUS_2\cell  0x2c\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM_PLUS_3\cell  0x3c\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM_H_H\cell  0x0c\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM_H_L\cell  0x0d\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM_L_H\cell  0x0e\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM_L_L\cell  0x0f\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM_FULL_BRIDGE\cell  0x40\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM_FULL_BRIDGE_REV\cell  0xC0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PWM_HALF_BRIDGE\cell  0x80\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_ON_COMP1\cell  0x100000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_ON_COMP2\cell  0x200000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_ON_COMP\cell  0x300000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_ON_INT0\cell  0x400000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_ON_COMP1_INT0\cell  0x500000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_ON_COMP2_INT0\cell  0x600000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_ON_COMP_INT0\cell  0x700000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_AC_L\cell  0x000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_AC_H\cell  0x040000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_AC_F\cell  0x080000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_BD_L\cell  0x000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_BD_H\cell  0x010000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_BD_F\cell  0x020000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_SHUTDOWN_RESTART\cell  0x80000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PULSE_STEERING_A\cell  0x01000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PULSE_STEERING_B\cell  0x02000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PULSE_STEERING_C\cell  0x04000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PULSE_STEERING_D\cell  0x08000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CCP_PULSE_STEERING_SYNC\cell  0x10000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_DISABLED\cell  0x00\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_MASTER\cell  0x20\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_SLAVE\cell  0x24\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_SCK_IDLE_HIGH\cell  0x10\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_SCK_IDLE_LOW\cell  0x00\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_CLK_DIV_4\cell  0x00\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_CLK_DIV_16\cell  0x01\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_CLK_DIV_64\cell  0x02\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_CLK_T2\cell  0x03\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_SS_DISABLED\cell  0x01\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_XMIT_L_TO_H\cell  0x4000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_XMIT_H_TO_L\cell  0x0000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_SAMPLE_AT_MIDDLE\cell  0x0000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_SAMPLE_AT_END\cell  0x8000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_L_TO_H\cell  SPI_SCK_IDLE_LOW\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  SPI_H_TO_L\cell  SPI_SCK_IDLE_HIGH\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  UART_ADDRESS\cell  2\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  UART_DATA\cell  4\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  UART_AUTODETECT\cell  8\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  UART_AUTODETECT_NOWAIT\cell  9\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  UART_WAKEUP_ON_RDA\cell  10\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  UART_SEND_BREAK\cell  13\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  NC_NC_NC_NC\cell  0x00\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  NC_NC\cell  0x00\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_A0_A3\cell  0x00090080\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_A1_A3\cell  0x000A0081\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_B3_A3\cell  0x00880082\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_B1_A3\cell  0x00280083\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_A0_VREF\cell  0x00010084\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_A1_VREF\cell  0x00020085\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_B3_VREF\cell  0x00800086\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_B1_VREF\cell  0x00200087\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_OUT_ON_A4\cell  0x00000020\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_INVERT\cell  0x00000010\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP1_ABSOLUTE_VREF\cell  0x20000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_A0_A2\cell  0x00058000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_A1_A2\cell  0x00068100\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_B3_A2\cell  0x00848200\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_B1_A2\cell  0x00248300\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_A0_VREF\cell  0x00018400\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_A1_VREF\cell  0x00028500\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_B3_VREF\cell  0x00808600\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_B1_VREF\cell  0x00208700\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_OUT_ON_A5\cell  0x00002000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_INVERT\cell  0x00001000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_ABSOLUTE_VREF\cell  0x10000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_T1_SYNC\cell  0x01000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  CP2_T1_GATE\cell  0x02000000\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  VREF_LOW\cell  0xa0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  VREF_HIGH\cell  0x80\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_31KHZ\cell  1\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_125KHZ\cell  0x11\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_250KHZ\cell  0x21\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_500KHZ\cell  0x31\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_1MHZ\cell  0x41\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_2MHZ\cell  0x51\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_4MHZ\cell  0x61\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_8MHZ\cell  0x71\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_INTRC\cell  1\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_NORMAL\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_STATE_STABLE\cell  4\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  OSC_31KHZ_STABLE\cell  2\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  ADC_OFF\cell  0\cell  ADC Off\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  ADC_CLOCK_DIV_2\cell  0x100\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  ADC_CLOCK_DIV_8\cell  0x40\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  ADC_CLOCK_DIV_32\cell  0x80\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  ADC_CLOCK_INTERNAL\cell  0xc0\cell  Internal 2-6us\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN0\cell  1\cell  | A0\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN1\cell  2\cell  | A1\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN2\cell  4\cell  | A2\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN3\cell  8\cell  | A3\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN4\cell  16\cell  | A5\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN5\cell  32\cell  | E0\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN6\cell  64\cell  | E1\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN7\cell  128\cell  | E2\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN8\cell  0x10000\cell  | B2\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN9\cell  0x20000\cell  | B3\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN10\cell  0x40000\cell  | B1\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN11\cell  0x80000\cell  | B4\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN12\cell  0x100000\cell  | B0\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  sAN13\cell  0x200000\cell  | B5\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  NO_ANALOGS\cell  0\cell  None\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  ALL_ANALOG\cell  0x1F00FF\cell  A0 A1 A2 A3 A5 E0 E1 E2 B0 B1 B2 B3 B4 B5\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  VSS_VDD\cell  0x0000\cell  | Range 0-Vdd\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  VSS_VREF\cell  0x1000\cell  | Range 0-Vref\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  VREF_VREF\cell  0x3000\cell  | Range Vref-Vref\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  VREF_VDD\cell  0x2000\cell  | Range Vref-Vdd\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  ADC_START_AND_READ\cell  7\cell  This is the default if nothing is specified\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  ADC_START_ONLY\cell  1\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  ADC_READ_ONLY\cell  6\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  __EEADDRESS__\cell  unsigned int8\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  L_TO_H\cell  0x40\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  H_TO_L\cell  0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  GLOBAL\cell  0x0BC0\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  PERIPH\cell  0x0B40\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RTCC\cell  0x000B20\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RB\cell  0x01FF0B08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_EXT_L2H\cell  0x50000B10\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_EXT_H2L\cell  0x60000B10\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_EXT\cell  0x000B10\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_AD\cell  0x008C40\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_TBE\cell  0x008C10\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RDA\cell  0x008C20\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_TIMER1\cell  0x008C01\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_TIMER2\cell  0x008C02\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_CCP1\cell  0x008C04\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_CCP2\cell  0x008D01\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_SSP\cell  0x008C08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_BUSCOL\cell  0x008D08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_EEPROM\cell  0x008D10\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_TIMER0\cell  0x000B20\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_OSC_FAIL\cell  0x008D80\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_COMP\cell  0x008D20\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_COMP2\cell  0x008D40\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_ULPWU\cell  0x008D04\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RB0\cell  0x1010B08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RB1\cell  0x1020B08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RB2\cell  0x1040B08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RB3\cell  0x1080B08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RB4\cell  0x1100B08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RB5\cell  0x1200B08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RB6\cell  0x1400B08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  INT_RB7\cell  0x1800B08\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  LED\cell  PIN_E1\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  trig1\cell  PIN_B2\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  echo1\cell  PIN_B3\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  trig2\cell  PIN_B4\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  echo2\cell  PIN_B5\cell  \cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  DELAY\cell  500\cell  \cell\row
+\pard\nowidctlpar\f0
+\par\tab
+\par\tab\tab 3.2.2 Types
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\f0
+\par
+\par\tab\tab 3.2.3 Variables
+\par
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  mesafe\cell  float\cell  `708\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  mesafe2\cell  float\cell  `709\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  zaman\cell  float\cell  `710\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  kp_a\cell  float\cell  `711\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  kp_i\cell  float\cell  `712\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  kp_d\cell  float\cell  `713\cell\row
+\pard\nowidctlpar\f0
+\par
+\par
+\pard\nowidctlpar\fi-360\li1147\f2\tab 3.3\tab\f0 Detailed Design
+\par
+\pard\nowidctlpar\tab\tab\tab 
+\par
+\pard\nowidctlpar\fi-360\li1506\f2    3.3.1\tab\f0 read_hcsr04
+\par     \f2 3.3.1.1\tab\f0 Requirements
+\par
+\pard\nowidctlpar\fi709\li2127 
+\par
+\pard\nowidctlpar
+\par\tab\tab\tab\tab Author: %AUTHOR%
+\par\tab\tab\tab\tab Purpose: %PURPOSE%
+\par\tab\tab\tab\tab Date Created:%DATE_CREATED%
+\par\tab\tab\tab\tab Changes:%CHANGES%
+\par
+\pard\nowidctlpar\fi-360\li1866
+\par
+\pard\nowidctlpar\fi-360\li1440      \f2 3.3.1.2\tab\f0  Local Data
+\par
+\pard\nowidctlpar\li2880
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  i\cell  int8\cell  `715\cell\row
+\pard\nowidctlpar\li2880\f0
+\par
+\par
+\pard\nowidctlpar\li3510
+\par
+\pard\nowidctlpar\tab\tab 3.3.1.3\tab Local Constants
+\par
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\f0
+\par\tab\tab 3.3.1.4\tab Local Types
+\par
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\f0
+\par
+\par\tab\tab 
+\par
+\pard\nowidctlpar\fi-360\li1506\f2    3.3.2\tab\f0 read_hcsr
+\par     \f2 3.3.2.1\tab\f0 Requirements
+\par
+\pard\nowidctlpar\fi709\li2127 
+\par
+\pard\nowidctlpar
+\par\tab\tab\tab\tab Author: %AUTHOR%
+\par\tab\tab\tab\tab Purpose: %PURPOSE%
+\par\tab\tab\tab\tab Date Created:%DATE_CREATED%
+\par\tab\tab\tab\tab Changes:%CHANGES%
+\par
+\pard\nowidctlpar\fi-360\li1866
+\par
+\pard\nowidctlpar\fi-360\li1440      \f2 3.3.2.2\tab\f0  Local Data
+\par
+\pard\nowidctlpar\li2880
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  i\cell  int8\cell  `722\cell\row
+\pard\nowidctlpar\li2880\f0
+\par
+\par
+\pard\nowidctlpar\li3510
+\par
+\pard\nowidctlpar\tab\tab 3.3.2.3\tab Local Constants
+\par
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\f0
+\par\tab\tab 3.3.2.4\tab Local Types
+\par
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\f0
+\par
+\par\tab\tab 
+\par
+\pard\nowidctlpar\fi-360\li1506\f2    3.3.3\tab\f0 get_pid_gains
+\par     \f2 3.3.3.1\tab\f0 Requirements
+\par
+\pard\nowidctlpar\fi709\li2127 
+\par
+\pard\nowidctlpar
+\par\tab\tab\tab\tab Author: %AUTHOR%
+\par\tab\tab\tab\tab Purpose: %PURPOSE%
+\par\tab\tab\tab\tab Date Created:%DATE_CREATED%
+\par\tab\tab\tab\tab Changes:%CHANGES%
+\par
+\pard\nowidctlpar\fi-360\li1866
+\par
+\pard\nowidctlpar\fi-360\li1440      \f2 3.3.3.2\tab\f0  Local Data
+\par
+\pard\nowidctlpar\li2880
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\li2880\f0
+\par
+\par
+\pard\nowidctlpar\li3510
+\par
+\pard\nowidctlpar\tab\tab 3.3.3.3\tab Local Constants
+\par
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\f0
+\par\tab\tab 3.3.3.4\tab Local Types
+\par
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\f0
+\par
+\par\tab\tab 
+\par
+\pard\nowidctlpar\fi-360\li1506\f2    3.3.4\tab\f0 MAIN
+\par     \f2 3.3.4.1\tab\f0 Requirements
+\par
+\pard\nowidctlpar\fi709\li2127 
+\par
+\pard\nowidctlpar
+\par\tab\tab\tab\tab Author: %AUTHOR%
+\par\tab\tab\tab\tab Purpose: %PURPOSE%
+\par\tab\tab\tab\tab Date Created:%DATE_CREATED%
+\par\tab\tab\tab\tab Changes:%CHANGES%
+\par
+\pard\nowidctlpar\fi-360\li1866
+\par
+\pard\nowidctlpar\fi-360\li1440      \f2 3.3.4.2\tab\f0  Local Data
+\par
+\pard\nowidctlpar\li2880
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\li2880\f0
+\par
+\par
+\pard\nowidctlpar\li3510
+\par
+\pard\nowidctlpar\tab\tab 3.3.4.3\tab Local Constants
+\par
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\f0
+\par\tab\tab 3.3.4.4\tab Local Types
+\par
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Identifier\cell Type\cell Description\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  \cell  \cell  \cell\row
+\pard\nowidctlpar\f0
+\par
+\par\tab\tab 
+\par
+\par\tab 4.0 Functions
+\par
+\par
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrt\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b Function Name\cell Description\cell\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  read_hcsr04\cell  \cell\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  read_hcsr\cell  \cell\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  get_pid_gains\cell  \cell\cell\row
+\trowd\trgaph10\trleft2880\trqc\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx5515\clbrdrl\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx8198\clbrdrl\brdrw15\brdrs\clbrdrr\brdrw15\brdrs\clbrdrb\brdrw15\brdrs \cellx12185\pard\intbl\nowidctlpar\b0\f1  MAIN\cell  \cell\cell\row
+\pard\nowidctlpar\f0
+\par
+\par
+\par}
